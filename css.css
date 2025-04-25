@@ -1,0 +1,845 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+
+    color: black;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    font-family: "Jua", sans-serif;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+li {
+    list-style-type: none;
+}
+
+.cont {
+    width: 1500px;
+    height: 750px;
+    margin: 0 auto;
+}
+
+
+
+header {
+    width: 1500px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo1 {
+    width: 310px;
+}
+
+.maim {
+    width: 600px;
+    height: 100px;
+}
+
+.mainul {
+    width: 370px;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.A-menu {
+    z-index: 10;
+    position: absolute;
+    display: none;
+    top: 100%;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.A-menu li {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    transition: background-color 0.3s;
+}
+
+.A-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+
+.mainul a:hover {
+    transform: translateX(5px) rotate(5deg);
+    color: rgb(0, 0, 0);
+    background-color: rgb(236, 205, 81);
+
+}
+
+.mainul a {
+    width: 100px;
+    border-radius: 20px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.main li {
+    width: 15%;
+    height: 25px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+}
+
+.main-2 {
+    width: 1500px;
+    height: 50px;
+    display: flex;
+    font-size: 20px;
+}
+
+.main-23 {
+    width: 100px;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.main-23 a {
+    width: 180px;
+    height: 25px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.main-23 a:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(235 197 40);
+
+}
+
+.inc {
+    width: 1500px;
+    height: 300px;
+    display: flex;
+}
+
+.inc1 {
+    width: 1500px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inc1 p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.inc1 img {
+    transition: 0.5s;
+
+}
+
+.inc1 img:hover {
+    transform: translateX(10px) rotate(20deg);
+}
+
+.gongji {
+    width: 1550px;
+    height: 270px;
+    display: flex;
+    padding-top: 21px;
+}
+
+.pres {
+    width: 300px;
+    height: 270px;
+    background-color: rgb(10, 80, 73);
+}
+
+.pres-img {
+    height: 120px;
+    padding-left: 90px;
+}
+
+.pres img {
+    width: 160px;
+    height: 110px;
+}
+
+.pres pre {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: "Jua", sans-serif;
+    padding-top: 10px;
+}
+
+.pres p {
+    width: 300px;
+    height: 105px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+
+
+.go1 {
+    width: 560px;
+    height: 50px;
+    display: flex;
+}
+
+.go1 button {
+    width: 105px;
+    height: 50px;
+    color: rgb(110, 110, 110);
+    border-radius: 20px 20px 0px 0px;
+    font-size: 20px;
+    transition: 0.3s;
+    font-family: "Jua", sans-serif;
+}
+
+.go1 button:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 78, 0);
+}
+
+.go2 a {
+    font-size: 25px;
+    width: 105px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    transition: 0.3s;
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 80, 73);
+}
+
+.go2 p {
+    width: 105px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    background-color: rgb(10, 80, 73);
+}
+
+.go2 hr {
+    padding-right: 20px;
+    color: black;
+    background-color: rgb(10, 80, 73);
+}
+
+.go2 img {
+    width: 300px;
+    height: 200px;
+}
+
+.rmqtlr {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rmqtlr a {
+    width: 300px;
+    height: 65px;
+    padding-right: 200px;
+}
+
+.rmqtlr p {
+    font-size: 15px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+
+.tab-news {
+    width: 450px;
+    height: 200px;
+}
+
+
+.tab-no {
+    padding-bottom: 200px;
+}
+
+.news1 {
+    border: 1px solid black;
+}
+
+.B-gallery {
+    width: 450px;
+    height: 200px;
+    display: none;
+
+}
+
+.B-gallery a {
+    width: 300px;
+}
+
+
+
+
+.box {
+    width: 300px;
+    height: 270px;
+    background-color: rgb(10, 80, 73);
+    padding-right: 200px;
+}
+
+.box h1 {
+    color: white;
+    padding-top: 20px;
+}
+
+.box a {
+    color: white;
+}
+
+.box pre {
+    padding-top: 109px;
+    color: white;
+}
+
+.box button p {
+    font-size: 20px;
+    color: white;
+    font-family: "Jua", sans-serif;
+    transition: 0.3s;
+}
+
+.box button p:hover {
+
+    color: black;
+}
+
+.box button {
+    width: 105px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    transition: 0.3s;
+    background-color: rgb(10, 80, 73);
+    border: none;
+}
+
+.box button:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(214, 214, 214);
+}
+
+.text {
+    padding-left: 20px;
+}
+
+
+.sl {
+    width: 1500px;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sl ul {
+    height: calc(3 * 550px);
+    animation: sl 21s infinite;
+}
+
+.sl ul li {
+    width: 100%;
+    height: 550px;
+    position: relative;
+}
+
+@keyframes sl {
+    0% {
+        transform: translateY(0);
+    }
+
+    47.6% {
+        transform: translateY(0);
+    }
+
+    52.4% {
+        transform: translateY(-550px);
+    }
+
+    71.4% {
+        transform: translateY(-550px);
+    }
+
+    76.2% {
+        transform: translateY(-1100px);
+    }
+
+    100% {
+        transform: translateY(-1100px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.sl ul li:nth-child(1) .slide-text {
+    animation-delay: 0s;
+}
+
+.sl ul li:nth-child(2) .slide-text {
+    animation-delay: 10s;
+}
+
+.sl ul li:nth-child(3) .slide-text {
+    animation-delay: 15.5s;
+}
+
+.slide-text a {
+    color: rgb(235 197 40);
+    font-size: 100px;
+}
+
+.slide-text a:hover {
+    transform: scale(1.03);
+}
+
+.slide-text {
+    font-size: 100px;
+}
+
+.bounceText {
+    text-shadow:
+        0 0 15px #000000,
+        0 0 15px #000000,
+        0 0 15px #000000,
+        0 0 15px #000000;
+}
+
+.slide-text2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 80px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 15px #000000,
+        0 0 15px #000000,
+        0 0 15px #000000,
+        0 0 15px #000000;
+}
+
+.slide-text3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 80px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 15px #000000,
+        0 0 15px #000000,
+        0 0 15px #000000,
+        0 0 15px #000000;
+}
+
+.slide-text3 p {
+    font-size: 100px;
+    color: rgb(0, 140, 255);
+    animation: rainbowText 5s linear infinite;
+}
+
+.slide-text2 p {
+    font-size: 100px;
+    color: rgb(20, 204, 143);
+    animation: rainbowText 5s linear infinite;
+}
+
+.textt {
+    color: white;
+    font-size: 30px;
+    text-shadow:
+        0 0 15px #000000,
+        0 0 15px #000000,
+        0 0 15px #000000,
+        0 0 15px #000000;
+}
+
+.text2 {
+    width: 500px;
+    height: 300px;
+    font-size: 18px;
+}
+
+.img01 img {
+    border-radius: 50px 50px 0px 0px;
+    transition: 0.4s;
+}
+
+.img01 img:hover {
+    transform: scale(1.1);
+}
+
+.img02 img {
+    transition: 0.4s;
+}
+
+.img02 img:hover {
+    transform: scale(1.1);
+}
+
+
+.img03 img {
+    border-radius: 0px 0px 50px 50px;
+    transition: 0.4s;
+}
+
+.img03 img:hover {
+    transform: scale(1.1);
+}
+
+.text2 {
+    width: 370px;
+    padding-left: 20px;
+    border: 1px solid black;
+
+}
+
+.text2 h1 p {
+    font-size: 20px;
+}
+
+.text2 .name {
+    font-size: 13px;
+}
+
+
+.slider-container {
+    position: relative;
+    width: 900px;
+    max-width: 490px;
+}
+
+.slider-container img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.slider-container img.active {
+    display: block;
+}
+
+.slider-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.slider-container .prev {
+    left: 10px;
+}
+
+.slider-container .next {
+    right: 10px;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    transition: right 0.5s ease;
+
+}
+
+.menu ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.menu ul li {
+    margin-bottom: 15px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu ul li a:hover {
+    color: #ffc107;
+}
+
+.menu-button {
+    font-family: "Jua", sans-serif;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 20px;
+    transition: 0.3s;
+    border: none;
+    background-color: white;
+}
+
+.menu-button img {
+    width: 20px;
+    height: 18px;
+}
+
+.menu-button:hover {
+    transform: translateX(5px) rotate(5deg);
+    color: rgb(255, 255, 255);
+    background-color: #333;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
+    display: none; 
+}
+
+.menu-open {
+    display: block;
+}
+
+.menu button {
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: #333;
+    font-size: 20px;
+    font-family: "Jua", sans-serif;
+    color: rgb(155, 155, 155);
+}
+
+.menu-but {
+    padding-top: 545px;
+}
+
+.menu img{
+    width: 100px;
+    height: 100px;
+}
+
+.menu a {
+    padding-left: 100px;
+    padding-top: 50px;
+}
+
+.menu p {
+    font-size: 20px;
+    color: white;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.menu .gobo a {
+    font-size: 16px;
+    color: white;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: rgb(131, 131, 131);
+}
+
+.foot0 {
+    width: 1500px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+#slider {
+    width: 490px;
+    height: 268px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    border-radius: 20px;
+}
+
+.slides img {
+    width: 490px;
+    height: 268px;
+    border-radius: 20px;
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+#prevButton {
+    left: 10px;
+    
+}
+
+#nextButton {
+    right: 10px;
+}
+
+
+.gip {
+
+    height: 400px;
+    margin: 0 auto;
+    padding-top: 160px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.gip img {
+    width: 400px;
+    height: 268px;
+    border-radius: 20px;
+}
+
+.gip .img-1 {
+    width: 650px;
+    padding-left: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.gui {
+    padding-top: 30px;
+}
+
+.gui img{
+    width: 490px;
+    height: 268px;
+    border-radius: 20px;
+}
+
+.footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    font-family: 'Jua', sans-serif;
+    margin-top: 100px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-info,
+.footer-links,
+.footer-social {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-info h3,
+.footer-links h3,
+.footer-social h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-links ul,
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li,
+.footer-social ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a,
+.footer-social ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.footer-social ul li a img {
+    width: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #1a252f;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}

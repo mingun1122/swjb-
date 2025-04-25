@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="website icon" href="logo2.png" type="png">
+    <style>
+        /* 공통 스타일 */
+body {
+    font-family: "Jua", sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    opacity: 0; /* 페이지가 처음에는 보이지 않도록 설정 */
+    transition: opacity 0.5s ease-in-out; /* 페이드 인 애니메이션 적용 */
+    font-family: "Jua", sans-serif;
+}
+
+
+
+body.loaded {
+    opacity: 1; /* 페이지가 로드된 후에 페이드 인 애니메이션으로 나타나도록 설정 */
+}
+
+/* 헤더 스타일 */
+.header {
+    width: 1500px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo1 img {
+    width: 300px;
+    height: 46px;
+}
+
+.mainul {
+    display: flex;
+    gap: 20px;
+}
+
+.mainul a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.mainul a:hover {
+    background-color: #f0f0f0;
+}
+
+/* 로그인 폼 스타일 */
+.login-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 400px;
+    margin-top: 50px;
+}
+
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.ghldnjsrkdlq {
+    padding-top: 10px;
+    
+}
+
+.ghldnjsrkdlq a {
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+}
+
+.mainul a{
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.mainul a:hover {
+    border-radius: 30px;
+    background-color: rgb(255, 181, 44);
+    transform: scale(1.15);
+}
+
+    </style>
+    
+</head>
+<body>
+    <!-- 헤더 섹션 -->
+    <header class="header">
+        <div class="logo1">
+            <a href="/index.html"><img src="logo1.png" alt="로고" width="100"></a>
+        </div>
+        <nav class="mainul">
+            <a href="/index.html">홈</a>
+            <a href="#">소개</a>
+            <a href="#">서비스</a>
+            <a href="#">연락처</a>
+        </nav>
+    </header>
+    
+    <!-- 로그인 폼 섹션 -->
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+            <h1>로그인</h1>
+            <div class="input-group">
+                <label for="username">사용자명</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required>
+                <div class="ghldnjsrkdlq">
+                <a href="/회원가입.html">회원가입</a>
+            </div>
+            </div>
+            <button type="submit">로그인</button>
+            <div class="error-message" id="errorMessage"></div>
+
+        </form>
+    </div>
+
+    <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+    
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var errorMessage = document.getElementById("errorMessage");
+    
+        if (username === "" || password === "") {
+            errorMessage.textContent = "사용자명과 비밀번호를 입력해 주세요.";
+        } else {
+            errorMessage.textContent = "";
+            console.log("로그인 시도:", { username: username, password: password });
+            alert("로그인✔");
+        }
+    });
+
+    window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+});
+
+    </script>
+</body>
+</html>

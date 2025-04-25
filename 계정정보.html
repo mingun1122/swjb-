@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계정 정보 수정</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="website icon" href="logo2.png" type="png">
+    <style>
+        body {
+            font-family: "Jua", sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        .header {
+            width: 1500px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo1 img {
+            width: 300px;
+            height: 46px;
+        }
+
+        .mainul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .mainul a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .mainul a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .edit-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 400px;
+            margin-top: 50px;
+        }
+
+        .edit-form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .mainul a {
+            border-radius: 30px;
+            transition: 0.5s;
+        }
+
+        .mainul a:hover {
+            border-radius: 30px;
+            background-color: rgb(255, 181, 44);
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 헤더 섹션 -->
+    <header class="header">
+        <div class="logo1">
+            <a href="/index.html"><img src="logo1.png" alt="로고" width="100"></a>
+        </div>
+        <nav class="mainul">
+            <a href="/index.html">홈</a>
+            <a href="#">소개</a>
+            <a href="#">서비스</a>
+            <a href="#">연락처</a>
+            <a href="/로그인.html">로그인</a> <!-- 로그인 페이지 링크 -->
+        </nav>
+    </header>
+
+    <!-- 계정 정보 수정 폼 섹션 -->
+    <div class="edit-container">
+        <form class="edit-form" id="editForm">
+            <h1>계정 정보 수정</h1>
+            <div class="input-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" value="김민건" required>
+            </div>
+            <div class="input-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" value="mingun3216@gmail.com" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">전화번호</label>
+                <input type="text" id="phone" name="phone" value="010-8815-0495" required>
+            </div>
+            <div class="input-group">
+                <label for="password">새 비밀번호</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">비밀번호 확인</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+            </div>
+            <button type="submit">저장</button>
+            <div class="error-message" id="errorMessage"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("editForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var errorMessage = document.getElementById("errorMessage");
+
+            if (name === "" || email === "" || phone === "" || (password !== "" && password !== confirmPassword)) {
+                errorMessage.textContent = "모든 필드를 정확히 입력해 주세요.";
+                if (password !== "" && password !== confirmPassword) {
+                    errorMessage.textContent = "비밀번호가 일치하지 않습니다.";
+                }
+            } else {
+                errorMessage.textContent = "";
+                console.log("계정 정보 수정 시도:", { name, email, phone, password });
+                alert("계정 정보가 성공적으로 수정되었습니다.");
+                // 여기서 서버로 데이터를 전송하는 코드를 추가하면 됩니다.
+            }
+        });
+
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+
+    </script>
+</body>
+
+</html>
